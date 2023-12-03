@@ -1,17 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: nschwob <nschwob>                          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 11:45:32 by nschwob           #+#    #+#             */
-/*   Updated: 2023/10/01 11:45:33 by nschwob          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "PhoneBook.hpp"
 #include <iostream>
+#include <limits>
 
 int main() {
     PhoneBook phoneBook;
@@ -58,7 +47,11 @@ int main() {
             std::cout << "Enter index of contact to view: ";
             std::cin >> index;
 
-            if (index >= 0 && index < phoneBook.getCurrentContactCount()) {
+            if (std::cin.fail()) {
+                std::cin.clear(); // Efface l'état d'échec de cin
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore le reste de la ligne
+                std::cout << "Invalid input. Please enter a number." << std::endl;
+            } else if (index >= 0 && index < phoneBook.getCurrentContactCount()) {
                 Contact contact = phoneBook.getContact(index);
                 std::cout << "First Name: " << contact.getFirstName() << std::endl;
                 std::cout << "Last Name: " << contact.getLastName() << std::endl;
