@@ -6,7 +6,7 @@
 /*   By: nschwob <nschwob>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 11:45:25 by nschwob           #+#    #+#             */
-/*   Updated: 2023/10/01 11:45:26 by nschwob          ###   ########.fr       */
+/*   Updated: 2023/12/06 19:59:02 by nschwob          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #define PHONEBOOK_HPP
 
 #include "Contact.hpp"
+#include <vector>
 
 class PhoneBook {
 private:
-    Contact contacts[8];
-    int currentContactIndex;
+    std::vector<Contact> contacts;
 
 public:
     PhoneBook();

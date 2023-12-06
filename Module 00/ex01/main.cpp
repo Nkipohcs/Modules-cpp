@@ -1,6 +1,7 @@
 #include "PhoneBook.hpp"
 #include <iostream>
 #include <limits>
+#include <string>
 
 int main() {
     PhoneBook phoneBook;
@@ -8,7 +9,9 @@ int main() {
 
     while (true) {
         std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-        std::cin >> command;
+        if (!std::getline(std::cin, command)) {
+            break; // Gère EOF ou Ctrl+D
+        }
 
         if (command == "EXIT") {
             break;
@@ -17,23 +20,23 @@ int main() {
             std::string input;
 
             std::cout << "Enter first name: ";
-            std::cin >> input;
+            std::getline(std::cin, input);
             contact.setFirstName(input);
 
             std::cout << "Enter last name: ";
-            std::cin >> input;
+            std::getline(std::cin, input);
             contact.setLastName(input);
 
             std::cout << "Enter nickname: ";
-            std::cin >> input;
+            std::getline(std::cin, input);
             contact.setNickname(input);
 
             std::cout << "Enter phone number: ";
-            std::cin >> input;
+            std::getline(std::cin, input);
             contact.setPhoneNumber(input);
 
             std::cout << "Enter darkest secret: ";
-            std::cin >> input;
+            std::getline(std::cin, input);
             contact.setDarkestSecret(input);
 
             phoneBook.addContact(contact);
