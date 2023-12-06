@@ -6,7 +6,7 @@
 /*   By: nschwob <nschwob>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 11:45:25 by nschwob           #+#    #+#             */
-/*   Updated: 2023/12/06 19:59:02 by nschwob          ###   ########.fr       */
+/*   Updated: 2023/12/06 20:32:12 by nschwob          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 
 class PhoneBook {
 private:
-    std::vector<Contact> contacts;
+    Contact contacts[8];
+    int currentContactIndex;
 
 public:
     PhoneBook();

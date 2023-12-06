@@ -6,16 +6,17 @@
 /*   By: nschwob <nschwob>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 11:45:28 by nschwob           #+#    #+#             */
-/*   Updated: 2023/12/06 19:59:20 by nschwob          ###   ########.fr       */
+/*   Updated: 2023/12/06 20:39:14 by nschwob          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() {}
+PhoneBook::PhoneBook() : currentContactIndex(0) {}
 
 void PhoneBook::addContact(const Contact &contact) {
-    contacts.push_back(contact);
+    contacts[currentContactIndex] = contact;
+    currentContactIndex = (currentContactIndex + 1) % 8; // Incrémente et boucle si nécessaire
 }
 
 Contact PhoneBook::getContact(int index) const {

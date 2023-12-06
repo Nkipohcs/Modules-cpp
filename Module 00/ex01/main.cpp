@@ -1,7 +1,15 @@
 #include "PhoneBook.hpp"
-#include <iostream>
 #include <limits>
+#include <iostream>
 #include <string>
+
+bool getInput(std::string& input) {
+    std::getline(std::cin, input);
+    if (std::cin.eof()) {
+        return false; // EOF détecté
+    }
+    return true;
+}
 
 int main() {
     PhoneBook phoneBook;
@@ -9,8 +17,8 @@ int main() {
 
     while (true) {
         std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-        if (!std::getline(std::cin, command)) {
-            break; // Gère EOF ou Ctrl+D
+        if (!getInput(command)) {
+            break; // Quitte le programme si EOF (Ctrl+D) est détecté
         }
 
         if (command == "EXIT") {
@@ -20,23 +28,23 @@ int main() {
             std::string input;
 
             std::cout << "Enter first name: ";
-            std::getline(std::cin, input);
+            if (!getInput(input)) break;
             contact.setFirstName(input);
 
             std::cout << "Enter last name: ";
-            std::getline(std::cin, input);
+            if (!getInput(input)) break;
             contact.setLastName(input);
 
             std::cout << "Enter nickname: ";
-            std::getline(std::cin, input);
+            if (!getInput(input)) break;
             contact.setNickname(input);
 
             std::cout << "Enter phone number: ";
-            std::getline(std::cin, input);
+            if (!getInput(input)) break;
             contact.setPhoneNumber(input);
 
             std::cout << "Enter darkest secret: ";
-            std::getline(std::cin, input);
+            if (!getInput(input)) break;
             contact.setDarkestSecret(input);
 
             phoneBook.addContact(contact);
