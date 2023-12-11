@@ -1,6 +1,12 @@
 NAME = animal
 
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRC = main.cpp \
+      Animal.cpp \
+      Cat.cpp \
+      Dog.cpp \
+      WrongAnimal.cpp \
+      WrongCat.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
 CXX = g++
