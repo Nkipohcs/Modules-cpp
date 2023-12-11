@@ -1,9 +1,9 @@
 CXX = g++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Karen.cpp
+SRC = main.cpp Harl.cpp
 OBJ = $(SRC:.cpp=.o)
-TARGET = karenFilter
+TARGET = harlFilter
 
 .PHONY: all clean fclean re test
 
@@ -24,10 +24,10 @@ fclean: clean
 re: fclean all
 
 test: $(TARGET)
-	@echo "Testing karenFilter..."
+	@echo "Testing harlFilter..."
 	@echo "Testing with input 'WARNING':"
-	@./karenFilter "WARNING"
+	@./harlFilter "WARNING"
 	@echo
 	@echo "Testing with input 'I am not sure how tired I am today...':"
-	@./karenFilter "I am not sure how tired I am today..."
+	@./harlFilter "I am not sure how tired I am today..."
 	@echo "End of tests."
