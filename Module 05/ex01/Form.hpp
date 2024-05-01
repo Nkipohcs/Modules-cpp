@@ -6,7 +6,11 @@
 /*   By: nschwob <nschwob@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 22:53:00 by nschwob           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/05/01 21:10:22 by nschwob          ###   ########.fr       */
+=======
+/*   Updated: 2024/02/10 22:56:40 by nschwob          ###   ########.fr       */
+>>>>>>> origin/main
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +42,20 @@ public:
 
     class GradeTooHighException : public std::exception {
     public:
+<<<<<<< HEAD
         virtual const char* what() const throw();
+=======
+        const char* what() const noexcept override;
+>>>>>>> origin/main
     };
 
     class GradeTooLowException : public std::exception {
     public:
+<<<<<<< HEAD
         virtual const char* what() const throw();
+=======
+        const char* what() const noexcept override;
+>>>>>>> origin/main
     };
 };
 
