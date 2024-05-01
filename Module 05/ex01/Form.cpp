@@ -6,11 +6,7 @@
 /*   By: nschwob <nschwob@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 22:52:58 by nschwob           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/05/01 21:14:48 by nschwob          ###   ########.fr       */
-=======
-/*   Updated: 2024/02/10 23:20:15 by nschwob          ###   ########.fr       */
->>>>>>> origin/main
+/*   Updated: 2024/05/01 21:48:13 by nschwob          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +33,6 @@ void Form::beSigned(const Bureaucrat& bureaucrat) {
     isSigned = true;
 }
 
-<<<<<<< HEAD
 const char* Form::GradeTooHighException::what() const throw() {
     return "Form grade too high";
 }
@@ -45,11 +40,6 @@ const char* Form::GradeTooHighException::what() const throw() {
 const char* Form::GradeTooLowException::what() const throw() {
     return "Form grade too low";
 }
-=======
-const char* Form::GradeTooHighException::what() const noexcept { return "Form grade too high"; }
-
-const char* Form::GradeTooLowException::what() const noexcept { return "Form grade too low"; }
->>>>>>> origin/main
 
 std::ostream& operator<<(std::ostream& os, const Form& form) {
     os << "Form: " << form.getName() << ", isSigned: " << (form.getIsSigned() ? "true" : "false")
