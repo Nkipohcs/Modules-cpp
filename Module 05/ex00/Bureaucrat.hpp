@@ -6,7 +6,7 @@
 /*   By: nschwob <nschwob@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 22:35:31 by nschwob           #+#    #+#             */
-/*   Updated: 2024/02/10 22:41:48 by nschwob          ###   ########.fr       */
+/*   Updated: 2024/05/17 21:38:05 by nschwob          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <string>
 #include <exception>
+#include <iostream>
 
 class Bureaucrat {
 private:
@@ -38,6 +39,8 @@ public:
     public:
         const char* what() const throw();
     };
+
+    friend std::ostream& operator<<(std::ostream &out, const Bureaucrat &b);
 };
 
-#endif
+#endif // BUREAUCRAT_HPP

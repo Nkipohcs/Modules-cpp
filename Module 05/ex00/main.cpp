@@ -6,7 +6,7 @@
 /*   By: nschwob <nschwob@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 22:35:29 by nschwob           #+#    #+#             */
-/*   Updated: 2024/05/01 21:50:57 by nschwob          ###   ########.fr       */
+/*   Updated: 2024/05/17 21:38:05 by nschwob          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main() {
         int grade = testGrades[i];
         try {
             Bureaucrat bureaucrat("Test Bureaucrat", grade);
-            std::cout << bureaucrat.getName() << " successfully created with grade " << bureaucrat.getGrade() << std::endl;
+            std::cout << bureaucrat << " successfully created" << std::endl;
         } catch (std::exception& e) {
             std::cout << "Failed to create Bureaucrat with grade " << grade << ": " << e.what() << std::endl;
         }
